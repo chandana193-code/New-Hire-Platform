@@ -1,0 +1,83 @@
+
+div {
+  font-family: "Segoe UI", Arial, sans-serif;
+   color: #0d47a1;
+   margin-top: 8%;
+}
+
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 13px;
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+
+thead {
+  background-color: #8d939979;
+}
+
+th {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a4a4a;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+td {
+  font-size: 13px;
+  color: #333;
+  padding: 12px;
+  border-radius: 8px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+tbody tr:hover {
+  background-color: #f9fbfd;
+}
+
+
+.editable {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.editable.yes {
+  color: #5cb85c;
+  background-color: #bfddbf;   
+}
+
+.editable.no {
+  color: #d9534f; 
+  /* border: 2px solid red ; */
+  background-color: #f69e9b;
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.submitted{
+    background-color: #95c595;
+
+}
+
+
+
