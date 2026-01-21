@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.jobtitle {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.jobtitle__s1 h4 {
+    font-weight: 500;
+}
+
+.jobtitle__s1 p {
+    color: gray;
+    font-size: 11px;
+}
+
+.jobtitle__s2 {
+    color: #1338BE;
+    display: flex;
+    gap: 3px;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+.jobtitle__s2 p {
+    font-size: small;
+}
+
+.jobcard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 30px;
+    gap: 15px;
+
+}
+
+.jobcard__s1 {
+    background-color: #3f4c7c;
+    color: white;
+    width: 270px;
+    height: 80px;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.jobcard__s1 h4 {
+
+    font-weight: 200;
+}
+
+.jobcard__s1 p {
+    font-size: small;
+}
+
+.sec-div {
+    margin-top: 40px;
+    border: none;
+    height: 2px;
+    background-color: rgb(238, 233, 233);
+}
+
+.jdes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.jdes__title h1 {
+    font-size: medium;
+    font-weight: 400;
+    color: #052455;
+}
+
+.jdes__title p {
+    color: gray;
+    font-size: small;
+}
+
+.jdes__title__s1 {
+    display: flex;
+    align-items: center;
+    gap: 2;
+    color: #1338BE;
+}
+.jdes__title__s1 a{
+     font-size: 11px;
+}
+.sec__div__1 {
+    margin-top: 10px;
+    border: none;
+    height: 2px;
+    background-color: rgb(253, 240, 240);
+}
+
+.des {
+    margin-top: 20px
+}
+
+.des h1 {
+    color: rgb(197, 85, 33);
+    font-size: medium;
+}
+
+.des p {
+    margin-top: 20px;
+    font-size: 14px;
+}
