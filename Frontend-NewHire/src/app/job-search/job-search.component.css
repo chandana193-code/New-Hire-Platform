@@ -1,0 +1,145 @@
+
+.job-search-container {
+  margin-top: 90px;
+  padding: 20px 30px;
+  background: #f3f3f3;
+}
+
+/* Layout */
+.job-search-layout {
+  display: flex;
+  gap: 20px;
+}
+
+/* Sidebar Filters */
+.filters {
+  width: 280px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.apply-btn {
+  width: 100%;
+  background: #0b4fa3;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.filter-title {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5e5;
+  color: #444;
+}
+
+/* Results Section */
+.results {
+  flex: 1;
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.search-bar select,
+.search-bar input {
+  padding: 10px 12px;
+  width: 260px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-btn {
+  background: #0b4fa3;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Result count */
+.result-count {
+  margin: 15px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Job card */
+.job-card {
+  display: flex;
+  background: #ffffff;
+  margin-bottom: 18px;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Logo */
+.job-logo {
+  width: 85px;
+  height: 85px;
+  background: #1c7ed6;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 18px;
+}
+
+/* Job details */
+.job-details h3 {
+  color: #0b4fa3;
+  margin: 0 0 6px 0;
+  font-size: 20px;
+}
+
+.job-details p {
+  margin: 4px 0;
+}
+
+/* Company + rating */
+.company {
+  font-weight: 600;
+  color: #222;
+}
+
+.stars {
+  color: #f5b301;
+  margin-left: 6px;
+}
+
+/* Meta row */
+.meta {
+  font-size: 14px;
+  color: #555;
+  margin-top: 6px;
+}
+
+.meta span {
+  margin-right: 14px;
+}
+
+/* Tags / role */
+.role {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
