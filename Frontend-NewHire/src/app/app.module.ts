@@ -9,6 +9,7 @@ import { JobSearchComponent } from './job-search/job-search.component';
 import { PostVacancyComponent } from './post-vacancy/post-vacancy.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     JobSearchComponent,
-    PostVacancyComponent
+    PostVacancyComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
