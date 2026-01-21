@@ -1,0 +1,37 @@
+<div>
+    <div>
+        <h2>Forms & Documents</h2>
+        <p>You are requested to provide & documents through the follwing forms</p>
+
+        <table  border="2" >
+            <thead>
+                <tr>
+                    <th>FormName</th>
+                    <th>Sections</th>
+                    <th>Editable</th>
+                    <th>Status</th>
+                </tr>
+                      </thead>
+                <tbody >
+                    <tr *ngFor="let d of forms;let i =index">
+                        <td>   <a [routerLink]="['/formdetails',i]">{{ d.name }}</a></td>
+                        <td>{{d.sections}}</td>
+                        <!-- <td class="editable" [ngClass]="d.editable ? 'yes' : 'no'"> -->
+                           <td class="editable"
+    [class.yes]="d.editable"
+    [class.no]="!d.editable">
+
+  {{ d.editable ? 'Editable' : 'Locked' }}
+</td>
+
+<td class="status">
+  {{ d.status }}
+</td>
+
+                    </tr>
+                </tbody>
+      
+
+        </table>
+    </div>
+</div>
