@@ -1,0 +1,47 @@
+<div class="post-job-container">
+  <h2>Post Job Vacancy</h2>
+
+  <form [formGroup]="postJobForm" (ngSubmit)="submitJob()">
+
+    <div class="form-group">
+      <label>Job Title</label>
+      <input type="text" formControlName="jobTitle" placeholder="Ex:Java Developer">
+      <small *ngIf="postJobForm.get('jobTitle')?.touched && postJobForm.get('jobTitle')?.invalid">
+        Job Title is required
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Primary Location</label>
+      <input type="text" formControlName="location" placeholder="Ex:Chennai">
+    </div>
+
+    <div class="form-group">
+      <label>Company / Job Type</label>
+      <input type="text" formControlName="companyName" placeholder="Ex:xyz technology">
+    </div>
+
+    <div class="form-group">
+      <label>Experience</label>
+      <input type="text" formControlName="experience" placeholder="3 - 10 Years">
+    </div>
+
+    <div class="form-group">
+      <label>No of Positions</label>
+      <input type="number" formControlName="positions">
+    </div>
+
+    <div class="form-group">
+      <label>Job Description</label>
+      <textarea rows="4" formControlName="jobDescription"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>About Company</label>
+      <textarea rows="5" formControlName="aboutCompany"></textarea>
+    </div>
+
+    <button type="submit" class="btn-post">Post Job</button>
+
+  </form>
+</div>

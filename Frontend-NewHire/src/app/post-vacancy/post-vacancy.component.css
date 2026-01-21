@@ -1,0 +1,81 @@
+.post-job-container {
+  max-width: 850px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.post-job-container h2 {
+  text-align: center;
+  color: #0b3c91;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 11px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input:focus, textarea:focus {
+  border-color: #0b3c91;
+  outline: none;
+}
+
+small {
+  color: red;
+  font-size: 12px;
+}
+
+.btn-post {
+  width: 100%;
+  padding: 12px;
+  background: #0b3c91;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-post:hover {
+  background: #092f6b;
+}
+
+input, textarea {
+  background-color: #f8f9fc;
+  transition: background-color 0.25s ease;
+}
+
+input:hover, textarea:hover {
+  background-color: #eef1f9;
+}
+
+input:focus, textarea:focus {
+  background-color: #ffffff;
+}
+
+.post-job-container:hover {
+  background-color: #fcfdff;
+  border: 1px solid #e3e7f0;
+  transition: background-color 0.3s ease;
+}
+
+.btn-post:hover {
+  opacity: 0.95;
+}
+
