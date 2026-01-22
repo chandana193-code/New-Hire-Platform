@@ -14,6 +14,7 @@ import { JobDescriptionComponent } from './job-description/job-description.compo
 import { AtsCheckerComponent } from './ats-checker/ats-checker.component';
 import { MessageComponent } from './message/message.component';
 
+import { HeaderSectionComponent } from './header-section/header-section.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MessageComponent } from './message/message.component';
     FormsComponent,
     JobDescriptionComponent,
     AtsCheckerComponent,
-    MessageComponent
+    MessageComponent,
+    HeaderSectionComponent
   ],
   imports: [
     BrowserModule,

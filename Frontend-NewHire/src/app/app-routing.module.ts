@@ -11,9 +11,10 @@ const routes: Routes = [
   {path:'header', component: HeaderComponent},
   {path:'job-search', component: JobSearchComponent},
   {path:'post-vacancy', component: PostVacancyComponent},
-  {path:'',component:FormsComponent},
   {path:'job-description', component:JobDescriptionComponent},
-  {path:'message',component:MessageComponent}
+  {path:'message',component:MessageComponent},
+  {path:'form',component:FormsComponent},
+  {path:'job-description', component:JobDescriptionComponent}
 ];
 
 @NgModule({

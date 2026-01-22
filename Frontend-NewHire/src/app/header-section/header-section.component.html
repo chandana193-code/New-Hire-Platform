@@ -1,0 +1,99 @@
+<header class="main-header">
+  <!-- <div class="header-left">
+    <img src="assets/profile.png" class="profile-pic" alt="Profile">
+
+    <div class="profile-info">
+      <h2>Arul Subramani</h2>
+      <p>For Java (JSP Struts) Developer (Contract)</p>
+      <p class="small">
+        <strong>RECRUITER</strong><br>
+        Parvathi Aravindh<br>
+        <strong>CONTACT</strong> +91-9791042771
+      </p>
+    </div>
+  </div> -->
+
+  <div class="header-left">
+  <!-- Clickable profile image -->
+  <img 
+    [src]="profileImage || 'assets/profile.png'" 
+    class="profile-pic" 
+    alt="Profile"
+    (click)="fileInput.click()"
+  >
+
+  <!-- Hidden file input -->
+  <input 
+    type="file" 
+    accept="image/*"
+    #fileInput
+    (change)="onImageSelected($event)"
+    hidden
+  >
+
+  <div class="profile-info">
+    <h2>Arul Subramani</h2>
+    <p>For Java (JSP Struts) Developer (Contract)</p>
+    <p class="small">
+      <strong>RECRUITER</strong><br>
+      Parvathi Aravindh<br>
+      <strong>CONTACT</strong> +91-9791042771
+    </p>
+  </div>
+</div>
+
+
+  <div class="header-right">
+    <ul class="steps">
+      <li class="active">
+        <span class="icon">✈</span>
+        <span>Applied</span>
+        <small>Start of Journey</small>
+      </li>
+
+      <li>
+        <span class="icon">📄</span>
+        <span>Evaluation</span>
+        <small>In Process</small>
+      </li>
+
+      <li>
+        <span class="icon">🎫</span>
+        <span>Offer</span>
+        <small>Boarding Pass</small>
+      </li>
+
+      <li>
+        <span class="icon">🧳</span>
+        <span>Onboarding</span>
+        <small>Find your seat</small>
+      </li>
+
+      <li>
+        <span class="icon">🛫</span>
+        <span>Joining Pending</span>
+        <small>Take Off</small>
+      </li>
+
+      <li>
+        <span class="icon">✔</span>
+        <span>Joined</span>
+        <small>In Air</small>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<nav class="side-menu">
+<ul>
+<li class="active"><i>🏠</i> Home</li>
+<li><i>📄</i> JD</li>
+<li><i>🗓</i> Interviews</li>
+<li><i>🎫</i> Offer</li>
+<li><i>📂</i> Forms/Documents</li>
+<li><i>💬</i> Messages</li>
+<li><i>🔒</i> Data Privacy</li>
+<li><i>🚪</i> Logout</li>
+</ul>
+</nav>
+
