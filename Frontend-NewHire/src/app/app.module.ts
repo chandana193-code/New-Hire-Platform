@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsComponent } from './forms/forms.component';
 import { JobDescriptionComponent } from './job-description/job-description.component';
 import { AtsCheckerComponent } from './ats-checker/ats-checker.component';
+import { MessageComponent } from './message/message.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { AtsCheckerComponent } from './ats-checker/ats-checker.component';
     PostVacancyComponent,
     FormsComponent,
     JobDescriptionComponent,
-    AtsCheckerComponent
+    AtsCheckerComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

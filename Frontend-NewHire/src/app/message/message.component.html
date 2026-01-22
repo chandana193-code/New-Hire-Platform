@@ -1,0 +1,40 @@
+
+<div class="messages-container">
+<h1>Messages</h1>
+<p>This is a list of notifications we have sent you on your Email-ID.</p>
+  <table class="msg-table">
+    <thead>
+      <tr>
+        <th>Sent</th>
+        <th>Subject</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let msg of paginatedMessages">
+        <td>{{ msg.sent }}</td>
+        <td>{{ msg.subject }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      &laquo;
+    </button>
+
+    <button
+      *ngFor="let page of totalPagesArray"
+      (click)="goToPage(page)"
+      [class.active]="page === currentPage">
+      {{ page }}
+    </button>
+
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      &raquo;
+    </button>
+  </div>
+
+</div>
+
