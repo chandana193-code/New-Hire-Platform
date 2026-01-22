@@ -1,37 +1,224 @@
-<div>
-    <div>
-        <h2>Forms & Documents</h2>
-        <p>You are requested to provide & documents through the follwing forms</p>
-
-        <table  border="2" >
-            <thead>
-                <tr>
-                    <th>FormName</th>
-                    <th>Sections</th>
-                    <th>Editable</th>
-                    <th>Status</th>
-                </tr>
-                      </thead>
-                <tbody >
-                    <tr *ngFor="let d of forms;let i =index">
-                        <td>   <a [routerLink]="['/formdetails',i]">{{ d.name }}</a></td>
-                        <td>{{d.sections}}</td>
-                        <!-- <td class="editable" [ngClass]="d.editable ? 'yes' : 'no'"> -->
-                           <td class="editable"
-    [class.yes]="d.editable"
-    [class.no]="!d.editable">
-
-  {{ d.editable ? 'Editable' : 'Locked' }}
-</td>
-
-<td class="status">
-  {{ d.status }}
-</td>
-
-                    </tr>
-                </tbody>
-      
-
-        </table>
+<div class="container">
+  <!-- Completed Form Summary Table -->
+  <div *ngIf="isFormComplete" class="completion-section">
+    <div class="header-section">
+      <h2>Forms Summary</h2>
+      <span class="badge-completed">✓ Completed</span>
     </div>
+    
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Form Name</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let form of submittedForms">
+          <td><strong>{{ form.formName }}</strong></td>
+          <td class="description">{{ form.description }}</td>
+          <td>
+            <span class="status-badge" [ngClass]="form.status === 'Submitted' ? 'status-submitted' : 'status-pending'">
+              {{ form.status }}
+            </span>
+          </td>
+          <td>
+            <button class="btn-edit" (click)="editForm(form.stepNumber)">
+              ✎ Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Stepper Form -->
+  <div *ngIf="!isFormComplete" class="stepper-section">
+    <h2>Multi-Step Form</h2>
+    
+    <!-- Stepper Header -->
+    <div class="stepper-header">
+      <div *ngFor="let step of steps; let i = index" class="step-container">
+        <div class="step-wrapper">
+          <div class="step-circle" 
+               [ngClass]="{
+                 'step-completed': isStepCompleted(step.id),
+                 'step-current': isStepCurrent(step.id),
+                 'step-pending': !isStepCompleted(step.id) && !isStepCurrent(step.id)
+               }">
+            <span *ngIf="isStepCompleted(step.id)">✓</span>
+            <span *ngIf="!isStepCompleted(step.id)">{{ step.id }}</span>
+          </div>
+          <div class="step-label" 
+               [ngClass]="{'label-active': isStepCurrent(step.id)}">
+            {{ step.name }}
+          </div>
+        </div>
+        <div *ngIf="i < steps.length - 1" class="step-connector" 
+             [ngClass]="{'connector-completed': isStepCompleted(step.id)}">
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Content -->
+    <div class="form-content">
+      <!-- Step 1: Personal Information -->
+      <div *ngIf="currentStep === 1">
+        <h3>Personal Information</h3>
+        <form [formGroup]="personalInfoForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name <span class="required">*</span></label>
+              <input type="text" formControlName="firstName" class="form-control" placeholder="Enter Your FirstName">
+              <div *ngIf="personalInfoForm.get('firstName')?.invalid && personalInfoForm.get('firstName')?.touched" class="error">
+                First name is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Last Name <span class="required">*</span></label>
+              <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Your LastName">
+              <div *ngIf="personalInfoForm.get('lastName')?.invalid && personalInfoForm.get('lastName')?.touched" class="error">
+                Last name is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email <span class="required">*</span></label>
+              <input type="email" formControlName="email" class="form-control" placeholder="Enter Your Email">
+              <div *ngIf="personalInfoForm.get('email')?.invalid && personalInfoForm.get('email')?.touched" class="error">
+                Valid email is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone <span class="required">*</span></label>
+              <input type="tel" formControlName="phone" class="form-control"  placeholder="Enter Your PhoneNumber">
+              <div *ngIf="personalInfoForm.get('phone')?.invalid && personalInfoForm.get('phone')?.touched" class="error">
+                Phone is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Date of Birth <span class="required">*</span></label>
+            <input type="date" formControlName="dateOfBirth" class="form-control">
+            <div *ngIf="personalInfoForm.get('dateOfBirth')?.invalid && personalInfoForm.get('dateOfBirth')?.touched" class="error">
+              Date of birth is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Address <span class="required">*</span></label>
+            <textarea formControlName="address" class="form-control" rows="3" placeholder="Enter Your Address" ></textarea>
+            <div *ngIf="personalInfoForm.get('address')?.invalid && personalInfoForm.get('address')?.touched" class="error">
+              Address is required
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 2: Education Details -->
+      <div *ngIf="currentStep === 2">
+        <h3>Education Details</h3>
+        <form [formGroup]="educationForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Degree <span class="required">*</span></label>
+              <input type="text" formControlName="degree" class="form-control" placeholder="e.g., Bachelor of Science">
+              <div *ngIf="educationForm.get('degree')?.invalid && educationForm.get('degree')?.touched" class="error">
+                Degree is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Field of Study <span class="required">*</span></label>
+              <input type="text" formControlName="fieldOfStudy" class="form-control" placeholder="e.g., Computer Science">
+              <div *ngIf="educationForm.get('fieldOfStudy')?.invalid && educationForm.get('fieldOfStudy')?.touched" class="error">
+                Field of study is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Institution <span class="required">*</span></label>
+            <input type="text" formControlName="institution" class="form-control" placeholder="University name">
+            <div *ngIf="educationForm.get('institution')?.invalid && educationForm.get('institution')?.touched" class="error">
+              Institution is required
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Graduation Year <span class="required">*</span></label>
+              <input type="number" formControlName="graduationYear" class="form-control" placeholder="2024">
+              <div *ngIf="educationForm.get('graduationYear')?.invalid && educationForm.get('graduationYear')?.touched" class="error">
+                Graduation year is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label>GPA/Percentage <span class="required">*</span></label>
+              <input type="text" formControlName="gpa" class="form-control" placeholder="3.8 or 85%">
+              <div *ngIf="educationForm.get('gpa')?.invalid && educationForm.get('gpa')?.touched" class="error">
+                GPA/Percentage is required
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 3: Declaration -->
+      <div *ngIf="currentStep === 3">
+        <h3>Candidate Declaration</h3>
+        <form [formGroup]="declarationForm">
+          <div class="declaration-box">
+            <p><strong>Declaration Statement:</strong></p>
+            <p>I hereby declare that all the information provided above is true and correct to the best of my knowledge. 
+               I understand that any false information may result in the rejection of my application.</p>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label>
+              <input type="checkbox" formControlName="agreed">
+              I agree to the above declaration <span class="required">*</span>
+            </label>
+            <div *ngIf="declarationForm.get('agreed')?.invalid && declarationForm.get('agreed')?.touched" class="error">
+              You must agree to the declaration
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Signature (Full Name) <span class="required">*</span></label>
+              <input type="text" formControlName="signature" class="form-control">
+              <div *ngIf="declarationForm.get('signature')?.invalid && declarationForm.get('signature')?.touched" class="error">
+                Signature is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Date <span class="required">*</span></label>
+              <input type="date" formControlName="date" class="form-control">
+              <div *ngIf="declarationForm.get('date')?.invalid && declarationForm.get('date')?.touched" class="error">
+                Date is required
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="button-group">
+      <button *ngIf="currentStep > 1" 
+              (click)="previousStep()" 
+              class="btn btn-secondary">
+        ← Previous
+      </button>
+      <button (click)="nextStep()" 
+              class="btn btn-primary">
+        {{ currentStep === 3 ? 'Submit' : 'Next →' }}
+      </button>
+    </div>
+  </div>
 </div>
