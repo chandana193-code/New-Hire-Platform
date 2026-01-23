@@ -14,6 +14,7 @@ import { JobDescriptionComponent } from './job-description/job-description.compo
 import { AtsCheckerComponent } from './ats-checker/ats-checker.component';
 import { HeaderSectionComponent } from './header-section/header-section.component';
 // import { HomeComponent } from './home/home.component';
+import { DataprivacyComponent } from './dataprivacy/dataprivacy.component';
 
 
 @NgModule({
@@ -26,7 +27,12 @@ import { HeaderSectionComponent } from './header-section/header-section.componen
     FormsComponent,
     JobDescriptionComponent,
     AtsCheckerComponent,
-    HeaderSectionComponent
+    HeaderSectionComponent,
+   
+    HeaderSectionComponent,
+    AtsCheckerComponent,
+    DataprivacyComponent,
+  
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,50 @@
+<div class="consent-container">
+  <h2>Consent Log</h2>
+  <p class="subtitle">
+    View all the consents you have provided during your application and onboarding process.
+  </p>
+
+
+  <div class="tabs">
+    <button
+      [class.active]="tab === 'privacy'"
+      (click)="tab = 'privacy'">
+      Data Privacy
+    </button>
+
+    <button
+      [class.active]="tab === 'consent'"
+      (click)="tab = 'consent'">
+      Consent Log
+    </button>
+  </div>
+
+ 
+  <div *ngIf="tab === 'privacy'" class="tab-content">
+    <p>Data privacy information goes here.</p>
+  </div>
+
+ 
+  <div *ngIf="tab === 'consent'" class="tab-content">
+    <table class="consent-table">
+      <thead>
+        <tr>
+          <th>Purpose</th>
+          <th>Submitted Date</th>
+          <th>Action</th>
+          <th>Policy URL</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let consent of consentLogs">
+          <td>{{ consent.purpose }}</td>
+          <td>{{ consent.submittedDate }}</td>
+          <td>{{ consent.action }}</td>
+          <td>{{ consent.policyUrl }}</td>
+          <td>{{ consent.note }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
