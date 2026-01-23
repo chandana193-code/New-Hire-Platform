@@ -8,6 +8,10 @@ import { JobDescriptionComponent } from './job-description/job-description.compo
 import { HeaderSectionComponent } from './header-section/header-section.component';
 import { InterviewComponent } from './interview/interview.component';
 import { HomeComponent } from './home/home.component';
+import { MessageComponent } from './message/message.component';
+
+import { DataprivacyComponent } from './dataprivacy/dataprivacy.component';
+
 
 const routes: Routes = [
   
@@ -19,11 +23,14 @@ const routes: Routes = [
   {path:'job-description', component:JobDescriptionComponent},
   {path:"", component:HeaderSectionComponent},
   {path:"interview", component:InterviewComponent},
+  { path: '', component: FormsComponent },
+  { path: 'message', component:MessageComponent },
+  {path:'dataprivacy',component:DataprivacyComponent}
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

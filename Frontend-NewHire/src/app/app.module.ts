@@ -15,6 +15,8 @@ import { AtsCheckerComponent } from './ats-checker/ats-checker.component';
 import { HeaderSectionComponent } from './header-section/header-section.component';
 import { HomeComponent } from './home/home.component';
 
+import { DataprivacyComponent } from './dataprivacy/dataprivacy.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,11 @@ import { HomeComponent } from './home/home.component';
     JobDescriptionComponent,
     AtsCheckerComponent,
     HeaderSectionComponent,
-    HomeComponent
+    HomeComponent,
+   HeaderSectionComponent,
+    AtsCheckerComponent,
+    DataprivacyComponent,
+  
   ],
   imports: [
     BrowserModule,
