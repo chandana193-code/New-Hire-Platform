@@ -13,7 +13,7 @@ import { FormsComponent } from './forms/forms.component';
 import { JobDescriptionComponent } from './job-description/job-description.component';
 import { AtsCheckerComponent } from './ats-checker/ats-checker.component';
 import { HeaderSectionComponent } from './header-section/header-section.component';
-// import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -26,7 +26,8 @@ import { HeaderSectionComponent } from './header-section/header-section.componen
     FormsComponent,
     JobDescriptionComponent,
     AtsCheckerComponent,
-    HeaderSectionComponent
+    HeaderSectionComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
