@@ -16,6 +16,9 @@ import { HeaderSectionComponent } from './header-section/header-section.componen
 import { HomeComponent } from './home/home.component';
 
 import { DataprivacyComponent } from './dataprivacy/dataprivacy.component';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -33,6 +36,9 @@ import { DataprivacyComponent } from './dataprivacy/dataprivacy.component';
    HeaderSectionComponent,
     AtsCheckerComponent,
     DataprivacyComponent,
+    SignupComponent,
+    SigninComponent,
+    LogoutComponent,
   
   ],
   imports: [
