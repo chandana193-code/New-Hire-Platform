@@ -19,6 +19,7 @@ import { DataprivacyComponent } from './dataprivacy/dataprivacy.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ViewJobDescriptionComponent } from './view-job-description/view-job-description.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { LogoutComponent } from './logout/logout.component';
     SignupComponent,
     SigninComponent,
     LogoutComponent,
+    ViewJobDescriptionComponent,
   
   ],
   imports: [
