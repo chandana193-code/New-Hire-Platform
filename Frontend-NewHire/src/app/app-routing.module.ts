@@ -26,7 +26,6 @@ const routes: Routes = [
   {path:'job-description', component:JobDescriptionComponent},
   {path:'view-job-desctiption', component:ViewJobDescriptionComponent},
   {path:"", component:HeaderSectionComponent},
-   {path:"", component:HeaderSectionComponent},
   {path:"interview", component:InterviewComponent},
   // { path: '', component: FormsComponent },
   { path: 'message', component:MessageComponent },
