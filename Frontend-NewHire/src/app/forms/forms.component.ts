@@ -20,6 +20,7 @@ export class FormsComponent implements OnInit {
 
   personalInfoForm!: FormGroup;
   educationForm!: FormGroup;
+  courseForm!: FormGroup;   // ✅ New form for Course Details
   declarationForm!: FormGroup;
 
   submittedForms: FormSubmission[] = [];
@@ -27,7 +28,8 @@ export class FormsComponent implements OnInit {
   steps = [
     { id: 1, name: 'Personal Information', completed: false },
     { id: 2, name: 'Education Details', completed: false },
-    { id: 3, name: 'Candidate Declaration', completed: false }
+    { id: 3, name: 'Course Details', completed: false },  // ✅ New step
+    { id: 4, name: 'Candidate Declaration', completed: false }
   ];
 
   constructor(private fb: FormBuilder) {}
@@ -54,6 +56,14 @@ export class FormsComponent implements OnInit {
       fieldOfStudy: ['', Validators.required]
     });
 
+    this.courseForm = this.fb.group({   // ✅ Course Details form
+      courseName: ['', Validators.required],
+      courseStart: ['', Validators.required],
+      courseEnd: ['', Validators.required],
+      courseDuration: ['', Validators.required],
+      courseCertificate: [null, Validators.required]
+    });
+
     this.declarationForm = this.fb.group({
       agreed: [false, Validators.requiredTrue],
       signature: ['', Validators.required],
@@ -64,6 +74,7 @@ export class FormsComponent implements OnInit {
   getCurrentForm(): FormGroup {
     if (this.currentStep === 1) return this.personalInfoForm;
     if (this.currentStep === 2) return this.educationForm;
+    if (this.currentStep === 3) return this.courseForm;   // ✅ Course step
     return this.declarationForm;
   }
 
@@ -104,10 +115,16 @@ export class FormsComponent implements OnInit {
         stepNumber: 2
       },
       {
+        formName: 'Course Details Form',   // ✅ Add Course form submission
+        description: `${this.courseForm.value.courseName} (${this.courseForm.value.courseStart} to ${this.courseForm.value.courseEnd})`,
+        status: 'Submitted',
+        stepNumber: 3
+      },
+      {
         formName: 'Candidate Declaration Form',
         description: `Signed by ${this.declarationForm.value.signature}`,
         status: 'Submitted',
-        stepNumber: 3
+        stepNumber: 4
       }
     ];
 
@@ -131,5 +148,16 @@ export class FormsComponent implements OnInit {
 
   isStepCurrent(stepId: number): boolean {
     return this.currentStep === stepId;
+  }
+
+  // ✅ Optional: handle file change for course certificate
+  onFileChange(event: any, controlName: string) {
+    const file = event.target.files[0];
+    if (file) {
+      this.courseForm.patchValue({
+        [controlName]: file
+      });
+      this.courseForm.get(controlName)?.markAsTouched();
+    }
   }
 }
