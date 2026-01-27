@@ -1,0 +1,24 @@
+{
+  "interview": [
+    {
+      "id": "0f11",
+      "round": 1,
+      "date": "2026-01-27",
+      "time": "12:53",
+      "duration": "20",
+      "attendance": "Present",
+      "status": "Selected",
+      "experience": "good"
+    },
+    {
+      "id": "675c",
+      "round": 2,
+      "date": "2026-01-27",
+      "time": "12:58",
+      "duration": "25",
+      "attendance": "Present",
+      "status": "Selected",
+      "experience": "good"
+    }
+  ]
+}

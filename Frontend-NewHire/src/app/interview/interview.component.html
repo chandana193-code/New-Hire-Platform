@@ -1,33 +1,39 @@
 
 <div class="container">
   <h1>My Interviews</h1>
-  <p>Please stay updated on your interviews and attend approriately</p>
+  <p>Please stay updated on your interviews and attend appropriately</p>
   <hr>
-  <table>
-    <tr>
-      <th>Interview Round</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Duration</th>
-      <th>Attendance Response</th>
-      <th>Status</th>
-      <th>Interview Experience</th>
-         
-    </tr>
-    <tr *ngIf="interviews.length === 0">
-      <td colspan="7" class="no-interview">
-        No interviews found!
-      </td>
-    </tr>
 
-  </table>
-
-  
-
-</div>
+  <table border="1" width="100%" cellpadding="8">
+    
+      <tr>
+        <th>Interview Round</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Duration</th>
+        <th>Attendance Response</th>
+        <th>Status</th>
+        <th>Interview Experience</th>
+      </tr>
+   
+    
+      <tr *ngIf="interviews.length === 0">
+  <td colspan="7" class="no-interview">
+    No interviews found!
+  </td>
+</tr>
 
    
+      <tr *ngFor="let interview of interviews">
+        <td>{{ interview.round }}</td>
+        <td>{{ interview.date }}</td>
+        <td>{{ interview.time }}</td>
+        <td>{{ interview.duration }}</td>
+        <td>{{ interview.attendance }}</td>
+        <td>{{ interview.status }}</td>
+        <td>{{ interview.experience }}</td>
+      </tr>
 
- 
-
-
+    
+  </table>
+</div>
