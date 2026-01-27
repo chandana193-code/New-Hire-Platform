@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,OnInit} from '@angular/core';
+import { InterviewService } from '../interview.service';
 
 @Component({
   selector: 'app-interview',
@@ -6,6 +7,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./interview.component.css']
 })
 export class InterviewComponent {
-  interviews:any=[];
 
+  interviews:any[]=[];
+   
+ 
+  constructor(private service: InterviewService) {}
+
+  ngOnInit(): void{
+    this.get()
+  }
+
+get(){
+  this.service.get().subscribe((data:any)=>{
+    this.interviews=data
+  })
 }
+
+  }
+  
+  
+
+  
+  
+   
+
+ 
+  
+
+
+

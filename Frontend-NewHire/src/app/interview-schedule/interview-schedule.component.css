@@ -1,0 +1,73 @@
+ 
+.container {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+
+.table-section {
+  width: 65%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background: #f4f4f4;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+.form-section {
+  width: 35%;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+.form-section h3{
+  text-align: center;
+}
+
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 6px;
+  margin-top: 5px;
+}
+
+small {
+  color: red;
+}
+
+button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 8px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+} 

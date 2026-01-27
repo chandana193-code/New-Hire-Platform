@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { JobSearchComponent } from './job-search/job-search.component';
 import { PostVacancyComponent } from './post-vacancy/post-vacancy.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsComponent } from './forms/forms.component';
 import { JobDescriptionComponent } from './job-description/job-description.component';
@@ -20,6 +20,8 @@ import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ViewJobDescriptionComponent } from './view-job-description/view-job-description.component';
+import { InterviewScheduleComponent } from './interview-schedule/interview-schedule.component';
+import { InterviewComponent } from './interview/interview.component';
 
 
 @NgModule({
@@ -41,12 +43,15 @@ import { ViewJobDescriptionComponent } from './view-job-description/view-job-des
     SigninComponent,
     LogoutComponent,
     ViewJobDescriptionComponent,
+    InterviewScheduleComponent,
+    InterviewComponent
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

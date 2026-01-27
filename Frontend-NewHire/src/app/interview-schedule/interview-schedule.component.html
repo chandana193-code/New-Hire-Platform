@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="table-section">
+   <table border="2">
+    <tr>
+      <th>Interview Round</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Duration</th>
+      <th>Attendance Response</th>
+      <th>Status</th>
+      <th>Interview Experience</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let interview of interviews">
+      <td>{{ interview.round }}</td>
+      <td>{{ interview.date }}</td>
+      <td>{{ interview.time }}</td>
+      <td>{{ interview.duration }}</td>
+      <td>{{ interview.attendance }}</td>
+      <td>{{ interview.status }}</td>
+      <td>{{ interview.experience }}</td>
+      <td><button (click)="del(interview.id)">Delete</button></td>
+    </tr>
+  </table>
+  </div>
+
+  <div class="form-section">
+    <h3>Interview Schedule</h3>
+
+
+    <form [formGroup]="interviewForms">
+
+    <label>Interview Round</label>
+    <input type="number" formControlName="round" />
+    <div
+      *ngIf="
+        interviewForms.get('round')?.touched &&
+        interviewForms.get('round')?.invalid
+      "
+      class="error"
+    >
+      Interview Round is required.
+    </div>
+
+    <label>Date</label>
+    <input type="date" formControlName="date" />
+    <div
+      *ngIf="
+        interviewForms.get('date')?.touched && interviewForms.get('date')?.invalid
+      "
+      class="error"
+    >
+      Date is required.
+    </div>
+
+    <label>Time</label>
+    <input type="time" formControlName="time" />
+    <div
+      *ngIf="
+        interviewForms.get('time')?.touched && interviewForms.get('time')?.invalid
+      "
+      class="error"
+    >
+      Time is required.
+    </div>
+
+    <label>Duration</label>
+    <input type="text" formControlName="duration" placeholder="e.g. 30 mins" />
+    <div
+      *ngIf="
+        interviewForms.get('duration')?.touched &&
+        interviewForms.get('duration')?.invalid
+      "
+      class="error"
+    >
+      Duration is required.
+    </div>
+
+    <label>Attendance Response</label>
+    <select formControlName="attendance">
+      <option value="" disabled>Select attendance</option>
+      <option value="Present">Present</option>
+      <option value="Absent">Absent</option>
+      <option value="Late">Late</option>
+      <option value="Processing">Processing</option>
+    </select>
+    <div
+      *ngIf="
+        interviewForms.get('attendance')?.touched &&
+        interviewForms.get('attendance')?.invalid
+      "
+      class="error"
+    >
+      Attendance response is required.
+    </div>
+
+    <label>Status</label>
+    <select formControlName="status">
+      <option value="" disabled>Select status</option>
+      <option value="Selected">Selected</option>
+      <option value="Rejected">Rejected</option>
+      <option value="Waiting">Waiting</option>
+      <option value="Cancelled">Cancelled</option>
+    </select>
+    <div
+      *ngIf="
+        interviewForms.get('status')?.touched &&
+        interviewForms.get('status')?.invalid
+      "
+      class="error"
+    >
+      Status is required.
+    </div>
+
+    <label>Interview Experience</label>
+    <textarea formControlName="experience"></textarea>
+
+    <button type="submit" (click)="save()">Add</button>
+  </form>
+  </div>
+</div>
