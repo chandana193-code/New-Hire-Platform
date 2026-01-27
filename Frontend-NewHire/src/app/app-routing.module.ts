@@ -12,6 +12,8 @@ import { MessageComponent } from './message/message.component';
 
 import { DataprivacyComponent } from './dataprivacy/dataprivacy.component';
 
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
 
 const routes: Routes = [
   
@@ -21,11 +23,15 @@ const routes: Routes = [
   {path:'post-vacancy', component: PostVacancyComponent},
   {path:'form',component:FormsComponent},
   {path:'job-description', component:JobDescriptionComponent},
-  {path:"", component:HeaderSectionComponent},
+   {path:"", component:HeaderSectionComponent},
   {path:"interview", component:InterviewComponent},
-  { path: '', component: FormsComponent },
+  // { path: '', component: FormsComponent },
   { path: 'message', component:MessageComponent },
-  {path:'dataprivacy',component:DataprivacyComponent}
+  {path:'dataprivacy',component:DataprivacyComponent},
+
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: '', redirectTo: 'signin', pathMatch: 'full' }
 
 ];
 
