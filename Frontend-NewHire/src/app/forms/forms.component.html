@@ -1,4 +1,5 @@
 <div class="container">
+
   <!-- Completed Form Summary Table -->
   <div *ngIf="isFormComplete" class="completion-section">
     <div class="header-section">
@@ -37,7 +38,7 @@
   <!-- Stepper Form -->
   <div *ngIf="!isFormComplete" class="stepper-section">
     <h2>Multi-Step Form</h2>
-    
+
     <!-- Stepper Header -->
     <div class="stepper-header">
       <div *ngFor="let step of steps; let i = index" class="step-container">
@@ -64,6 +65,7 @@
 
     <!-- Form Content -->
     <div class="form-content">
+
       <!-- Step 1: Personal Information -->
       <div *ngIf="currentStep === 1">
         <h3>Personal Information</h3>
@@ -71,14 +73,14 @@
           <div class="form-row">
             <div class="form-group">
               <label>First Name <span class="required">*</span></label>
-              <input type="text" formControlName="firstName" class="form-control" placeholder="Enter Your FirstName">
+              <input type="text" formControlName="firstName" class="form-control" placeholder="Enter First Name">
               <div *ngIf="personalInfoForm.get('firstName')?.invalid && personalInfoForm.get('firstName')?.touched" class="error">
                 First name is required
               </div>
             </div>
             <div class="form-group">
               <label>Last Name <span class="required">*</span></label>
-              <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Your LastName">
+              <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Last Name">
               <div *ngIf="personalInfoForm.get('lastName')?.invalid && personalInfoForm.get('lastName')?.touched" class="error">
                 Last name is required
               </div>
@@ -88,14 +90,14 @@
           <div class="form-row">
             <div class="form-group">
               <label>Email <span class="required">*</span></label>
-              <input type="email" formControlName="email" class="form-control" placeholder="Enter Your Email">
+              <input type="email" formControlName="email" class="form-control" placeholder="Enter Email">
               <div *ngIf="personalInfoForm.get('email')?.invalid && personalInfoForm.get('email')?.touched" class="error">
                 Valid email is required
               </div>
             </div>
             <div class="form-group">
               <label>Phone <span class="required">*</span></label>
-              <input type="tel" formControlName="phone" class="form-control"  placeholder="Enter Your PhoneNumber">
+              <input type="tel" formControlName="phone" class="form-control" placeholder="Enter Phone Number">
               <div *ngIf="personalInfoForm.get('phone')?.invalid && personalInfoForm.get('phone')?.touched" class="error">
                 Phone is required
               </div>
@@ -112,7 +114,7 @@
 
           <div class="form-group">
             <label>Address <span class="required">*</span></label>
-            <textarea formControlName="address" class="form-control" rows="3" placeholder="Enter Your Address" ></textarea>
+            <textarea formControlName="address" class="form-control" rows="3" placeholder="Enter Address"></textarea>
             <div *ngIf="personalInfoForm.get('address')?.invalid && personalInfoForm.get('address')?.touched" class="error">
               Address is required
             </div>
@@ -143,7 +145,7 @@
 
           <div class="form-group">
             <label>Institution <span class="required">*</span></label>
-            <input type="text" formControlName="institution" class="form-control" placeholder="University name">
+            <input type="text" formControlName="institution" class="form-control" placeholder="University Name">
             <div *ngIf="educationForm.get('institution')?.invalid && educationForm.get('institution')?.touched" class="error">
               Institution is required
             </div>
@@ -168,14 +170,57 @@
         </form>
       </div>
 
-      <!-- Step 3: Declaration -->
+      <!-- Step 3: Course Details -->
       <div *ngIf="currentStep === 3">
+        <h3>Course Details</h3>
+        <form [formGroup]="courseForm">
+          <div class="form-group">
+            <label>Course Name <span class="required">*</span></label>
+            <input type="text" formControlName="courseName" class="form-control" placeholder="Enter Course Name">
+            <div *ngIf="courseForm.get('courseName')?.invalid && courseForm.get('courseName')?.touched" class="error">
+              Course Name is required
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Course Start Date <span class="required">*</span></label>
+              <input type="date" formControlName="courseStart" class="form-control">
+              <div *ngIf="courseForm.get('courseStart')?.invalid && courseForm.get('courseStart')?.touched" class="error">
+                Start Date is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Course End Date <span class="required">*</span></label>
+              <input type="date" formControlName="courseEnd" class="form-control">
+              <div *ngIf="courseForm.get('courseEnd')?.invalid && courseForm.get('courseEnd')?.touched" class="error">
+                End Date is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Course Duration <span class="required">*</span></label>
+            <input type="text" formControlName="courseDuration" class="form-control" placeholder="e.g., 3 months" >
+          </div>
+
+          <div class="form-group">
+            <label>Course Certificate <span class="required">*</span></label>
+            <input type="file" (change)="onFileChange($event, 'courseCertificate')" class="form-control">
+            <div *ngIf="courseForm.get('courseCertificate')?.invalid && courseForm.get('courseCertificate')?.touched" class="error">
+              Course Certificate is required
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 4: Declaration -->
+      <div *ngIf="currentStep === 4">
         <h3>Candidate Declaration</h3>
         <form [formGroup]="declarationForm">
           <div class="declaration-box">
             <p><strong>Declaration Statement:</strong></p>
-            <p>I hereby declare that all the information provided above is true and correct to the best of my knowledge. 
-               I understand that any false information may result in the rejection of my application.</p>
+            <p>I hereby declare that all the information provided above is true and correct. I understand that false information may result in rejection of my application.</p>
           </div>
 
           <div class="form-group checkbox-group">
@@ -206,6 +251,7 @@
           </div>
         </form>
       </div>
+
     </div>
 
     <!-- Navigation Buttons -->
@@ -217,7 +263,7 @@
       </button>
       <button (click)="nextStep()" 
               class="btn btn-primary">
-        {{ currentStep === 3 ? 'Submit' : 'Next →' }}
+        {{ currentStep === 4 ? 'Submit' : 'Next →' }}
       </button>
     </div>
   </div>

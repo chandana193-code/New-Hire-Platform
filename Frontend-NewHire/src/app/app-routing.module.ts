@@ -23,9 +23,9 @@ const routes: Routes = [
   {path:'post-vacancy', component: PostVacancyComponent},
   {path:'form',component:FormsComponent},
   {path:'job-description', component:JobDescriptionComponent},
-  {path:"", component:HeaderSectionComponent},
+   {path:"", component:HeaderSectionComponent},
   {path:"interview", component:InterviewComponent},
-  { path: '', component: FormsComponent },
+  // { path: '', component: FormsComponent },
   { path: 'message', component:MessageComponent },
   {path:'dataprivacy',component:DataprivacyComponent},
 
