@@ -11,30 +11,27 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let msg of paginatedMessages">
-        <td>{{ msg.sent }}</td>
-        <td>{{ msg.subject }}</td>
+      <tr *ngFor="let msg of messages">
+         <td>{{msg.date}}, {{msg.time}}</td>
+        <td>{{msg.sub}}</td>
       </tr>
     </tbody>
   </table>
 
   <!-- Pagination -->
-  <div class="pagination">
-    <button (click)="prevPage()" [disabled]="currentPage === 1">
-      &laquo;
-    </button>
+<div class="pagination" *ngIf="totalPages > 1">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">
+    &laquo;
+  </button>
 
-    <button
-      *ngFor="let page of totalPagesArray"
-      (click)="goToPage(page)"
-      [class.active]="page === currentPage">
-      {{ page }}
-    </button>
+  <button
+    *ngFor="let page of totalPagesArray"
+    (click)="goToPage(page)"
+    [class.active]="page === currentPage">
+    {{ page }}
+  </button>
 
-    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
-      &raquo;
-    </button>
-  </div>
-
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+    &raquo;
+  </button>
 </div>
-

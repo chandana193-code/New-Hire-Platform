@@ -22,6 +22,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { ViewJobDescriptionComponent } from './view-job-description/view-job-description.component';
 import { InterviewScheduleComponent } from './interview-schedule/interview-schedule.component';
 import { InterviewComponent } from './interview/interview.component';
+import { MessdataComponent } from './messdata/messdata.component';
+import { MessageComponent } from './message/message.component';
 
 
 @NgModule({
@@ -44,7 +46,10 @@ import { InterviewComponent } from './interview/interview.component';
     LogoutComponent,
     ViewJobDescriptionComponent,
     InterviewScheduleComponent,
-    InterviewComponent
+    InterviewComponent,
+    MessdataComponent,
+    MessageComponent,
+
   
   ],
   imports: [

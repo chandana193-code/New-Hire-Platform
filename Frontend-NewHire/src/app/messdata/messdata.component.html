@@ -1,0 +1,28 @@
+<form [formGroup]="messageForm" >
+<label for="date">Date</label>
+<input formControlName="date" type="date" placeholder="DD/MM/YYYY">
+
+<label for="time">Time</label>
+<input formControlName="time" type="time" placeholder="Ex. 11:11 PM">
+
+<label for="date">Subject</label>
+<input formControlName="sub" type="text" placeholder="Enter the Subject of mail sent">
+
+<button (click)="submit()">Submit</button>
+</form>
+<br>
+
+<table border="2">
+    <tr>
+        <th>Date, Time</th>
+        <th>Subject</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr *ngFor="let a of data">
+        <td>{{a.date}}, {{a.time}}</td>
+        <td>{{a.sub}}</td>
+        <td><button (click)="del(a.id)">Delete</button></td>
+
+    </tr>
+</table>

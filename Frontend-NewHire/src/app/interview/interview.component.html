@@ -17,11 +17,10 @@
       </tr>
    
     
-      <tr *ngIf="interviews.length === 0">
+      <tr *ngIf="interviews && interviews.length === 0">
   <td colspan="7" class="no-interview">
     No interviews found!
   </td>
-</tr>
 
    
       <tr *ngFor="let interview of interviews">
