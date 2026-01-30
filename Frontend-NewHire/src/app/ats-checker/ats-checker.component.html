@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>ATS Resume Checker</h2>
+
+  <!-- Form -->
+  <form [formGroup]="atsForm" (ngSubmit)="uploadResume()" class="form">
+    <select formControlName="jobTitle">
+      <option value="">Select Job</option>
+      <option value="Frontend Developer">Frontend Developer</option>
+      <option value="Backend Developer">Backend Developer</option>
+    </select>
+
+    <input type="file" (change)="onFileSelected($event)" />
+
+    <button type="submit">Check Resume</button>
+  </form>
+
+  <!-- Circle Score Output -->
+  <div *ngIf="score > 0" class="circle-container">
+    <div class="circle">
+      <div class="fill" [style.background]="
+        'conic-gradient(#6a11cb ' + displayScore + '%, #e0e0e0 0%)'
+      "></div>
+      <span class="score-text">{{ displayScore }}%</span>
+    </div>
+  </div>
+</div>

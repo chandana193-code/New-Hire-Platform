@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: auto;
+    padding-right: auto;
+    margin-top: 5%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.boardingbox {
+    display: flex;
+    justify-content: space-between;
+    background-color: #8790A0;
+    padding-top: 20px;
+    padding-left: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding-right: 100px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.title {
+    display: flex;
+    gap: 20px;
+}
+
+.title__s1 p {
+    font-size: 20px;
+}
+
+.title__s1 span {
+    font-size: 14px;
+}
+
+.sub {
+    display: flex;
+    gap: 20px;
+}
+
+.sub__s1 p {
+    font-size: 20px;
+}
+
+.sub__s1 span {
+    font-size: 14px;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 50px;
+    background-color: white;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+}
+
+.sec__left label {
+    color: #8790A0;
+    font-size: 13px;
+}
+
+.sec__left p {
+    font-weight: 500;
+    padding-top: 5px;
+}
+
+.decision {
+    display: flex;
+    gap: 200px;
+    padding-top: 20px;
+}
+
+.decision label {
+    color: #8790A0;
+    font-size: 13px;
+}
+
+.decision p {
+    font-weight: 500;
+    padding-top: 5px;
+    font-size: medium;
+}
+
+.joining {
+    padding-top: 20px;
+
+}
+
+.joining label {
+    color: #8790A0;
+    font-size: 13px;
+}
+
+.joining p {
+    font-weight: 500;
+    padding-top: 5px;
+    font-size: medium;
+}
+
+.sec__right {
+    padding-right: 14%;
+}
+
+.checkbox__one {
+    color: blue;
+    display: flex;
+    gap: 10px;
+}
+
+.checkbox__one input {
+    color: green;
+}
+
+.checkbox__two {
+    color: blue;
+    padding-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.checkbox__two input {
+    color: green;
+}
+
+.checkbox__three {
+    align-items: center;
+    padding-top: 15px;
+    display: flex;
+    gap: 10px;
+    color: #8790A0;
+}
+
+.footer {
+    margin-top: 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 25px solid #8790A0;
+}
+
+.end {
+    color: blue;
+    padding-top: 20px;
+}

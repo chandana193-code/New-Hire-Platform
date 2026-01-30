@@ -1,0 +1,18 @@
+<div class="signin-container">
+  <form [formGroup]="signinForm" (ngSubmit)="signin()">
+    <h2>Sign In</h2>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Enter email" formControlName="email" />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter password" formControlName="password" />
+
+    <p class="link-text">
+      Create an account?
+      <a routerLink="/signup">Sign Up</a>
+    </p>
+
+    <button type="submit" [disabled]="signinForm.invalid">Sign In</button>
+  </form>
+</div>

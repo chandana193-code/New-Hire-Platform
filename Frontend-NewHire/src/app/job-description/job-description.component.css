@@ -1,15 +1,16 @@
 * {
     margin:0 ;
+    margin: 0;
     padding: 0;
 }
 
 body {
     font-family: "Poppins", sans-serif;
-
 }
-
 .container {
     max-width: 1200px;
+    margin-top: 6%;
+    margin-bottom: 4%;
     margin-left: auto;
     margin-right: auto;
     padding-left: auto;
@@ -33,11 +34,23 @@ body {
 .jobtitle__s1 p {
     color: gray;
     font-size: 11px;
+
+}
+
+.jobtitle__s1 h4 {
+    font-weight: 600;
+}
+
+.jobtitle__s1 p {
+    padding-top: 5px;
+    color: gray;
+    font-size: small;
 }
 
 .jobtitle__s2 {
     color: #1338BE;
     display: flex;
+    align-items: center;
     gap: 3px;
 }
 
@@ -47,6 +60,7 @@ body {
 
 .jobtitle__s2 p {
     font-size: small;
+    font-size: 11px;
 }
 
 .jobcard {
@@ -64,6 +78,7 @@ body {
     height: 80px;
     border-radius: 10px;
     padding-top: 15px;
+    padding-top: 20px;
     padding-left: 20px;
 }
 
@@ -75,7 +90,14 @@ body {
 .jobcard__s1 p {
     font-size: small;
 }
+.jobcard__{
+    padding-top: 10px;
+    font-size: small;
+}
+.icon__dash{
+    font-size: 15px;
 
+}
 .sec-div {
     margin-top: 40px;
     border: none;
@@ -107,6 +129,10 @@ body {
     color: #1338BE;
 }
 
+.jdes__title__s1 a{
+     font-size: 12px;
+     /* text-decoration: none; */
+}
 .sec__div__1 {
     margin-top: 10px;
     border: none;

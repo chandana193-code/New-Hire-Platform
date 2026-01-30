@@ -13,9 +13,7 @@ public class UserService {
 
 
   public Users saveUser(Users users) {
-    if (userRepo.existsByUserName(users.getUserName())) {
-       throw new UserAlreadyExistsException("User is already exists");
-    }
+
     return userRepo.save(users);
   }
 }
