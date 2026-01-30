@@ -79,19 +79,16 @@
     padding-left: auto;
     padding-bottom: auto;
 }
-
 .about__s1 {
     margin-top: 40px;
     font-size: 25px;
 
 }
-
 .about__s2 p {
     padding-top: 5px;
     font-size: 22px;
     color: #133c49;
 }
-
 .about__s3 {
     padding-top: 40px;
     font-size: 22px;
@@ -138,8 +135,6 @@
     color: #133c49;
     margin-top: 40px;
     font-size: 22px;
-
-
 }
 
 .whatwill__do p {
